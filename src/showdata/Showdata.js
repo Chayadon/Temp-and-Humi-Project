@@ -2,9 +2,7 @@ import React, {Component} from "react";
 import axios from "axios";
 import Modal from 'react-awesome-modal';
 import './Showdata.css';
-
-const ip = "localhost";
-const port = "3000";
+import {ip,port} from "../setIP/setting";
 
 export default class Showdata extends Component{
     constructor() {
