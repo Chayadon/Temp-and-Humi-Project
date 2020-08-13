@@ -8,10 +8,10 @@ app.use(body());
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: '34.87.59.95',
     user: 'root',
-    password: '',
-    database: 'testing'
+    password: '123456',
+    database: 'react_DB'
 });
 // show data
 app.get('/data', function(req,res){

@@ -1,12 +1,25 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {ip,port} from "../setIP/setting";
-
+//import Facebook from "./Facebook" ;
+//import FacebookLogin from "reat-facebook-login" ;
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+} from 'react-router-dom';
+let state = {
+	id: 1,
+};
+localStorage.setItem('key', state.id);
+var ID = Number(localStorage.getItem('Size')) ;
 export default class Register extends Component{
     constructor() {
         super();
         this.state = {
-            idkey:"",
+            idkey: ID,
             firstname:"",
             lastname:""
         }
@@ -18,8 +31,9 @@ export default class Register extends Component{
             [e.target.id]: e.target.value
         });
     }
+
     handleClicked(){
-        let url = `http://${ip}:${port}/data`;
+        let url = `https://test.chayadon.com/data`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
@@ -27,12 +41,17 @@ export default class Register extends Component{
         }
         axios.post(url,data)
         this.setState({
-            idkey:"",
+            idkey: ID = ID + 1  ,
             firstname:"",
             lastname:""
         });
+	console.log('Hello');
+	localStorage.removeItem('Size') ;
+	localStorage.setItem('Size', ID);
+	ID = 0 ;
+	ID = Number(localStorage.getItem('Size'))  ;
+	console.log('Hello,,,');
     }
-
     render() {
         return(
             <div>
@@ -41,20 +60,20 @@ export default class Register extends Component{
                     <hr/>
                 </div>
                 <form className="container">
+		    <div className="form-group">
+                        <label htmlFor="id">ID :</label>
+                        <input type="text" className="form-control" size="10" id="idkey" onChange={this.handleChang} value={this.state.idkey}/>
+                    </div>
                     <div className="form-group">
-                        <label>firstname:</label>
+                        <label>Firstname :</label>
                         <input type="text" className="form-control" id="firstname" onChange={this.handleChang} value={this.state.firstname}/>
                     </div>
                     <div className="form-group">
-                        <label>lasttname:</label>
+                        <label>Lastname :</label>
                         <input type="text" className="form-control" id="lastname" onChange={this.handleChang} value={this.state.lastname}/>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="id">id:</label>
-                        <input type="text" className="form-control" size="10" id="idkey" onChange={this.handleChang} value={this.state.idkey}/>
-                    </div>
-                    <button type="submit" className="btn btn-primary" onClick={this.handleClicked}>Submit</button>
-                </form>
+	          <Link to = {"Showdata"}> <button type="submit" className="btn btn-primary"  onClick={this.handleClicked} value > Submit </button></Link>
+		</form>
             </div>
         );
     }

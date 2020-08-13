@@ -7,6 +7,7 @@ class ButtonRegister extends Component {
             <div className="container">
                 <Link to={'./Register'}> <button type="button" className="btn btn-primary">Register</button> </Link>
             </div>
+
         );
     }
 }

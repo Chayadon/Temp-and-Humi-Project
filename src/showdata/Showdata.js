@@ -26,7 +26,7 @@ export default class Showdata extends Component{
     }
 
     onDelete=(user)=>{
-        let url = `http://${ip}:${port}/delete`;
+        let url = `https://test.chayadon.com/delete`;
         let data = {
             idkey:user.id
         }
@@ -57,7 +57,7 @@ export default class Showdata extends Component{
         this.setState({
             [e.target.id]: e.target.value
         });
-        let url = `http://${ip}:${port}/data`;
+        let url = `https://test.chayadon.com/data`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
@@ -67,7 +67,7 @@ export default class Showdata extends Component{
     }
 
     handleClicked(){
-        let url = `http://${ip}:${port}/data`;
+        let url = `https://test.chayadon.com/data`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
@@ -85,8 +85,8 @@ export default class Showdata extends Component{
         let {list} = this.state;
 
         return (
-            <div className="App">
-                <h2>Users Information</h2>
+            <div className="App" >
+              <h2>Users Information</h2>
                 <hr/>
                 <div className="container p-3 my-3 bg-dark text-white">
                     <table className="table table-dark">
@@ -103,7 +103,7 @@ export default class Showdata extends Component{
                                             <td>{user.firstname}</td>
                                             <td>{user.lastname}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={()=>this.call(user)}>Edit</button></td>
-                                            <td><button type="button" class="btn btn-danger"  onClick={()=>this.onDelete(user)}>Delet</button></td>
+                                            <td><button type="button" class="btn btn-danger"  onClick={()=>this.onDelete(user)}>Delete</button></td>
                                             <div className="box">
                                                 <Modal visible={this.state.visible}
                                                        width="1200"
@@ -136,3 +136,4 @@ export default class Showdata extends Component{
         );
     }
 }
+
