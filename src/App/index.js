@@ -6,11 +6,11 @@ import FacebookLogin from "react-facebook-login" ;
 import './style.css';
 
 let state = {
-	isLoggedIn: false,
+	isLoggedIn: true,
 	userID: "",
 	name: "",
 	email: "",
-picture: ""
+	picture: ""
 };
 
 class App extends Component {

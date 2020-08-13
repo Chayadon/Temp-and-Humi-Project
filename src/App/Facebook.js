@@ -3,24 +3,36 @@ import FacebookLogin from "react-facebook-login";
 import ButtonShowdata from "../showdata/ButtonShowdata" ;
 import ButtonRegister from "../register/ButtonRegister" ;
 import './style.css' ;
+import LoginHOC from 'react-facebook-login-hoc'
+
+
+var key  = 1 ;
 export default class Facebook extends Component {
   state = {
     isLoggedIn: false,
     userID: "",
-    name: "",
-    email: "",
-    picture: ""
-  };
+      name: "",
+      email: "",
+      picture: ""
 
-  handleReset(){
-	let count = 0 ;
+  };
+handleReset(){
+
 	console.log("Hello");
+	console.log(key);
+	localStorage.removeItem('key') ;
+	localStorage.setItem('key',key );
+	key = Number(localStorage.getItem('key'))-1  ;
+
+	window.location.reload(true);
+	window.location.replace('https://test.chayadon.com/');
 	}
+
 
   responseFacebook = response => {
     console.log(response);
     this.setState({
-      isLoggedIn: 1,
+      isLoggedIn: true ,
       userID: response.userID,
       name: response.name,
       email: response.email,
@@ -29,12 +41,12 @@ export default class Facebook extends Component {
 };
 
   componentClicked = () => console.log("clicked");
-
+//key = Number(localStorage.getItem('key'))  ;
 
   render() {
     let fbContent;
-
-    if (this.state.isLoggedIn) {
+	if(key == 0){  fbContent = ( <FacebookLogin appId=""  autoLoad={0}/>);  key = 1 ;
+	}else if (this.state.isLoggedIn) {
       fbContent = (
         <div
           style={{
@@ -50,7 +62,7 @@ export default class Facebook extends Component {
 	<button type = "button" className="btn btn-danger" onClick={this.handleReset}>Logout</button>
         </div>
       );
-    } else {
+    } else  {
       fbContent = (
         <FacebookLogin
           appId="216252089722355"
