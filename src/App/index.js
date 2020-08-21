@@ -5,21 +5,16 @@ import Facebook from "./Facebook";
 import FacebookLogin from "react-facebook-login" ;
 import './style.css';
 
-let state = {
-	isLoggedIn: true,
-	userID: "",
-	name: "",
-	email: "",
-	picture: ""
-};
-
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-            <div className="mt-4"><Facebook/></div>
+        <div className="jumbotron mb-0 text-white bg" style={{ height: '60%' }}>
+          <h1 >Welcome to React</h1>
+          <div className="my-3"><Facebook /></div>
+          <div className="my-5">
+            <img className="logo" src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" alt="" style={{ height: '100px', width: '100px' }} />
+          </div>
         </div>
       </div>
     );

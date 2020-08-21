@@ -86,7 +86,7 @@ export default class Showdata extends Component{
 
         return (
             <div className="App" >
-              <h2>Users Information</h2>
+              <h2 className="my-4">Users Information</h2>
                 <hr/>
                 <div className="container p-3 my-3 bg-dark text-white">
                     <table className="table table-dark">

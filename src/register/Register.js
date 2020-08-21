@@ -13,7 +13,7 @@ import {
 let state = {
 	id: 1,
 };
-localStorage.setItem('key', state.id);
+//localStorage.setItem('key', state.id);
 var ID = Number(localStorage.getItem('Size')) ;
 export default class Register extends Component{
     constructor() {
@@ -62,7 +62,7 @@ export default class Register extends Component{
                 <form className="container">
 		    <div className="form-group">
                         <label htmlFor="id">ID :</label>
-                        <input type="text" className="form-control" size="10" id="idkey" onChange={this.handleChang} value={this.state.idkey}/>
+                        <input type="text "  className="form-control" size="10" id="idkey" onChange={this.handleChang} value={this.state.idkey}/>
                     </div>
                     <div className="form-group">
                         <label>Firstname :</label>
