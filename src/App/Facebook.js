@@ -4,7 +4,7 @@ import ButtonShowdata from "../showdata/ButtonShowdata" ;
 import ButtonRegister from "../register/ButtonRegister" ;
 import './style.css' ;
 
-//localStorage.setItem('key', 0);
+localStorage.setItem('key', localStorage.getItem('key'));
 export default class Facebook extends Component {
   state = {
     isLoggedIn: false,
@@ -25,7 +25,7 @@ export default class Facebook extends Component {
     console.log(response);
 //  localStorage.setItem('key', 1);
     this.setState({
-      isLoggedIn: Number(localStorage.getItem('key')),
+      isLoggedIn: localStorage.getItem('key'),
       userID: response.userID,
       name: response.name,
       email: response.email,
@@ -62,7 +62,7 @@ export default class Facebook extends Component {
       fbContent = (
         <FacebookLogin
           appId="216252089722355"
-          autoLoad={Number( localStorage.getItem('key') )   }
+          autoLoad={Number(localStorage.getItem('key'))}
           fields="name,email,picture"
           onClick={this.componentClicked}
           callback={this.responseFacebook}
