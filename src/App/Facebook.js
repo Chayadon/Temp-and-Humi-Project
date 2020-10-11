@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
 import ButtonShowdata from "../showdata/ButtonShowdata" ;
 import ButtonRegister from "../register/ButtonRegister" ;
+import ButtonTemp     from "../temp/buttom" ;
 import './style.css' ;
 
 localStorage.setItem('key', localStorage.getItem('key'));
@@ -53,7 +54,8 @@ export default class Facebook extends Component {
           <img src={this.state.picture} alt={this.state.name} />
           <h2>Welcome {this.state.name}</h2>
           Email: {this.state.email}
-	<div className = "btn-group btn-group-lg"><ButtonRegister/><ButtonShowdata/></div>
+	<div className = "btn-group btn-group-lg"><ButtonTemp/><ButtonRegister/><ButtonShowdata/></div>
+	<p></p>
 	<button type = "button" className="btn btn-danger" onClick={this.handleReset}>Logout</button>
         </div>
       );

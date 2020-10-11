@@ -1,0 +1,47 @@
+/*h1, p {
+  font-family: Lato;
+}
+body{
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+    display: grid;   
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 50px 510px 100px;
+    grid-template-areas:
+        ". h h h ."
+        ". c c c ."
+        ". f f f .";
+
+}
+.header {
+  grid-area: h;
+  background: #34495e;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+.header text{
+  font-size: 25px;
+  color:#fff;
+
+}
+.content {
+    background: white;
+    grid-area: c;
+    overflow-y: scroll;
+
+}
+.footer {
+  background: #34495e;
+   grid-area: f;
+}
+.fullheight{
+  height: 90vh;
+ display: inline-block;
+ margin: 0 auto;
+ 
+}
+*/

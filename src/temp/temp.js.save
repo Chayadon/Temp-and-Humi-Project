@@ -1,0 +1,22 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Iframe from 'react-iframe' ;
+export default class Temp extends Component{
+    render() {
+	 return (
+
+<html lang="en" dir="ltr">
+	//<body>
+	//<a href="https://www.google.co.th/">Visit W3Schools</a>
+	<div ner">
+                <iframe width="1200" height="800" 
+		src="https://datastudio.google.com/embed/reporting/2b626f45-4874-41c8-bf48-928f1701c146/page/E7QjB"
+                frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+	</body>
+</html>
+        );
+    }
+}
+
+

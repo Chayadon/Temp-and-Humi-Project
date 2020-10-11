@@ -6,7 +6,7 @@ class ButtonShowdata extends Component {
 
 	 return (
 	<div className="container">
-                <Link to={'./Showdata'}> <button type="button" className="btn btn-primary">Showdata</button></Link>
+                <Link to={'./Showdata'}> <button type="button" className="btn btn-success">Showdata</button></Link>
             </div>
         );
     }
