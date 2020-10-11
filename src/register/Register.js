@@ -33,7 +33,7 @@ export default class Register extends Component{
     }
 
     handleClicked(){
-        let url = `https://test.chayadon.com/data`;
+        let url = `******`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
