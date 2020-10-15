@@ -19,7 +19,7 @@ export default class Facebook extends Component {
 	localStorage.setItem('key', 0);
 	console.log("Hello");
 	window.location.reload(true);
-	window.location.href = 'https://test.chayadon.com/';
+	window.location.href = 'https://##########/';
 	}
 
   responseFacebook = response => {
