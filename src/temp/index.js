@@ -15,8 +15,8 @@ export default class Temp extends Component {
     return (
       <div align="center">
 
-	 <IframeComponent src="***********"/>
-	 <IframeComponent src="***********"/>
+	 <IframeComponent src="***********" width="1300" height="900"/>
+	 <IframeComponent src="***********" width="1300" height="900"/>
       </div>
     );
   }
