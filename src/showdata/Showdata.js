@@ -26,7 +26,7 @@ export default class Showdata extends Component{
     }
 
     onDelete=(user)=>{
-        let url = '*********';
+        let url = '####/delete';
         let data = {
             idkey:user.id
         }
@@ -57,7 +57,7 @@ export default class Showdata extends Component{
         this.setState({
             [e.target.id]: e.target.value
         });
-        let url = '************';
+        let url = '####/data';
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
@@ -67,7 +67,7 @@ export default class Showdata extends Component{
     }
 
     handleClicked(){
-        let url = '**********';
+        let url = '####/data';
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
